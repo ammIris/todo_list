@@ -1,0 +1,273 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.app{
+background: rgb(229, 233, 235);
+min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #848FBE;
+font-family:sans-serif;
+}
+
+.container{
+    height: 78vh;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 0px 25px 25px;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 2px solid black; */
+    background: linear-gradient(to bottom, #ECF7FF, #ECEDFF);
+}
+
+.title_box{
+    width: 404px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #BEC7D9;
+}
+
+
+.title{
+    font-size: 28px;
+    font-weight: 435;
+}
+.sub_title{
+    font-size: 12.5px;
+    font-weight: 400;
+    color: 	#a9b0ca;
+}
+
+
+/* 進度條 */
+.progress_container{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 404px;
+    height: 46px;
+    padding: 10px 0px;
+     
+}
+.progress_bar{
+    flex: 1;
+    -webkit-appearance: none; /* 停用瀏覽器預設樣式*/
+    accent-color: #94aef4;
+    border-radius:20px;
+    overflow: hidden;
+    height:12px; 
+}
+
+.progress_bar::-webkit-progress-value {
+    background-color: #91AEFC;
+    border-radius: 20px;
+  }
+
+  .progress_bar::-webkit-progress-bar {
+    background-color: #fff;
+  }
+
+.progress_percent{
+    width: 41px;
+}
+
+.form{
+width: 442px;
+height: 230.5px;
+display: flex;
+margin-bottom: 10px;
+overflow: scroll;
+}
+
+.list_all{
+    list-style: none;
+}
+/* 滾動條 */
+/* 滾動條寬度 */
+.form::-webkit-scrollbar{
+    width: 7px;
+    height: 0px;
+    background-color: transparent;
+}
+/* 滾動條軌道顏色 */
+.form::-webkit-scrollbar-track {
+   background-color: transparent;
+  }
+
+  /* 滾動條滑動的色塊 */
+  .form::-webkit-scrollbar-thumb {
+    background-color: #CBD3F8;
+    border-radius: 5px;
+  }
+  .form::-webkit-scrollbar-corner{
+    background-color: transparent;
+  }
+ 
+.list{
+    display: flex;
+    align-items: center;
+    width: 404px;
+    justify-content: space-between;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 0px 14px;
+    line-height: 50px;
+    font-size: 16px;
+    box-shadow: 0px 2px 5px #dde4f5;
+    position: relative;
+}
+
+/* 待辦事項的樣式 */
+.list::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4.5px; 
+    height: 100%;
+    background-color: #788ED9; 
+    border-radius: 4px 0px 0px 4px;
+}
+
+
+.check_box{
+    margin-right: 14px;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
+    font-size: 16px;
+    position: relative; 
+   
+}
+.check_box::after{
+  position: absolute;
+  top: 0;
+  color: #807c7c;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  text-align: center;
+  content:'';
+  border-radius: 3px;
+  }
+  .check_box:checked::after{
+      content:'\2714';
+      color: #fff;
+      font-size: 15px;
+      font-weight: 100;
+      background-color: #788ED9;
+  }
+
+
+/* 完成的刪除線 */
+.completed{
+  text-decoration: line-through;
+}
+
+.edit_list{
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #848FBE;
+}
+
+.delete_btn{
+   border: none;
+   background-color: #fff;
+    cursor: pointer;
+    color:#d4d5ee;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+/* Move done things開關 */
+.btnbox {
+    display:inline-block;
+    vertical-align:middle;
+    width: 36px;
+    height: 19px;
+    border-radius:100px;
+    background-color: #fff;
+  }
+  .btnbox .btn {
+    display:inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius:50%;
+    background-color: #CAD2F5;
+    margin-left: 2px;
+    transition: .6s;
+  }
+  .checkbox {
+    position:absolute;
+    opacity:0;
+  }
+  .checkbox:checked + .btnbox {
+    background-color: #CAD2F5;
+  }
+  .checkbox:checked + .btnbox .btn {
+    margin-left: 18px;
+    background-color: #fff;
+  }
+
+
+  .done_text{
+    font-size: 14px;
+    padding-right: 9px;
+  }
+
+  .done_sec{
+    width: 404px;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 2px solid #BEC7D9;
+    margin-top: 10px;
+  }
+  .done_box{
+    padding-top: 10px;
+    padding-right: 5px;
+  }
+
+ /* 新增代辦事項輸入框 */
+ .add_box{
+    width: 442px;
+    display: flex;
+ }
+ .add_title{
+    padding-bottom: 4.5px;
+ }
+
+ .add_input{
+    width: 80.3%;
+    line-height: 46px;
+    border-radius: 3px;
+    border: none;
+    font-size: 16px;
+    padding-left: 3px;
+    /* 更改輸入樣式 */
+    caret-color: #778FD1;
+    outline-color: transparent;
+ }
+ .add_btn{
+    border-radius: 3px;
+    color: white;
+    background-color: #778FD1;
+    padding: 12px 15px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 5px;
+ }
+
+ .sec1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+ }
