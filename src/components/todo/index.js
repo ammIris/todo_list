@@ -51,19 +51,20 @@ export default function TodoIndex() {
 
   // Move done things - btn
   const [sort, setSort] = useState(false);
-  const sortTodo = (todos) => {
-    const uncompletedTodos = todos.filter((v) => !v.completed);
-    const completedTodos = todos.filter((v) => v.completed);
-    const origin = todos.slice().sort((a, b) => a.id - b.id);
-    return sort ? [...uncompletedTodos, ...completedTodos] : origin;
-  };
+
   const handleSort = () => {
     setSort((sort) => !sort);
   };
 
   useEffect(() => {
+    const sortTodo = (todos) => {
+      const uncompletedTodos = todos.filter((v) => !v.completed);
+      const completedTodos = todos.filter((v) => v.completed);
+      const origin = todos.slice().sort((a, b) => a.id - b.id);
+      return sort ? [...uncompletedTodos, ...completedTodos] : origin;
+    };
     setTodos(sortTodo(todos));
-  }, [sort]);
+  }, [sort, todos]);
 
   // ----------- 進度條 -----------
   // 計算總代辦事項
